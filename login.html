@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <div class="login-box">
+        <div class="login-header">
+            <header>Login</header>
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXI4cWV3aHk2NmNlZGE0ejF0cDkzMWh1eTVqN2h6bDl4MGowamY1eCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/W0eEHBAwoCZhu/200.webp" alt="cay dua">
+        </div>
+        <form id="loginForm">
+            <div class="input-box">
+                <input type="text" id="emailInput" class="input-field" 
+                placeholder="Email" autocomplete="off" required>
+            </div>
+            <div class="input-box">
+                <input type="password" id="passwordInput" class="input-field" 
+                placeholder="Password" autocomplete="off" required>
+            </div>
+            <div class="forgot">
+                <section>
+                    <input type="checkbox" id="check">
+                    <label for="check" style="color: rgb(0, 0, 0);">Remember me</label>
+                </section>
+                <section>
+                    <a href="#">Forgot Password</a>
+                </section>
+            </div>
+
+            <div class="input-submit">
+                <button type="submit" class="submit-btn" id="submit"></button>
+                <label for="submit">Sign In</label>
+            </div>
+        </form>
+        <div class="sign-up-link">
+            <p style="color: aliceblue;">You don't have account ? <a href="register.html">Sign up</a></p>
+        </div>
+        <div id="message" style="margin-top: 15px; text-align: center; color: #ff4444;"></div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('emailInput').value;
+            const password = document.getElementById('passwordInput').value;
+            const messageDiv = document.getElementById('message');
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(u => u.email === email && u.password === password);
+            
+            if (user) {
+                localStorage.setItem('currentUser', JSON.stringify({
+                    username: user.username,
+                    email: user.email
+                }));
+                
+                messageDiv.style.color = '#44ff44';
+                messageDiv.textContent = 'Đăng nhập thành công! Đang chuyển hướng...';
+                
+                setTimeout(() => {
+                    window.location.href = "Jerry.html";
+                    window.close();
+                }, 150);
+            } else {
+                messageDiv.style.color = '#ff4444';
+                messageDiv.textContent = 'Email hoặc mật khẩu không đúng!';
+            }
+        });
+    </script>
+</body>
+</html>
