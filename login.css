@@ -7,11 +7,19 @@
 
 body{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 6vw;
     align-items: center;
     min-height: 100vh;
-  background-size: 100% 100%;
-  background-image: url(https://wallpapercave.com/wp/wp2285421.jpg);
+    background-size: 100% 100%;
+    background-color: black;
+    animation: logincl 10s ease infinite;
+}
+
+@keyframes logincl{
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 .login-box{
     display: flex;
@@ -20,22 +28,39 @@ body{
     width: 450px;
     height: 670px;
     padding: 30px;
-    border: 3px solid #333;
+    border: 3px solid transparent;
     border-radius: 36px;
+    z-index: 2;
+    background: linear-gradient(#000, #000) padding-box,
+                linear-gradient(145deg, #553bda, #9d7cf5, #d4d4d4, #c5b3ff, #553bda) border-box;
+    background-size: 100% 100%, 400% 400%;
+    animation: border 3s ease infinite;
 }
+
+@keyframes border{
+    0%, 100%{
+        background-position: 0% 0%, 0% 50%;
+    }
+    50%{
+        background-position: 0% 0%, 100% 50%;
+    }
+}
+
 .login-header{
     text-align: center;
     padding: 20px 0px 40px 0px;
 }
+
 .login-header header{
     font-size: 65px;
     font-weight: 600;
-    background: linear-gradient(120deg,#553bda,#5fd2ec);
+    background: linear-gradient(120deg,#8c77f4,#cbcbcb);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: mauchu 5s ease infinite;
 }
+
 @keyframes mauchu{
     0%{
         background-position: 0% 50%;
@@ -47,6 +72,7 @@ body{
         background-position: 0% 50%;
     }
 }
+
 .input-box .input-field{
     width: 100%;
     height: 60px;
@@ -57,41 +83,50 @@ body{
     margin-bottom: 15px;
     transition: all 0.3s linear;
 }
+
 .input-field:focus{
     width: 105%;
-    border: 4px solid cyan;
+    border: 4px solid rgb(187, 117, 240);
 }
+
 .forgot{
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
 }
+
 .section{
     display: flex;
     align-items: center;
     font-size: 14px;
 }
+
 #check{
     margin-right: 10px;
 }
+
 a{
     text-decoration: none; 
-    color: rgb(193, 255, 7);
+    color: rgb(178, 80, 243);
 }
+
 a:hover{
     color: chartreuse;
 }
+
 .input-submit{
     position: relative;
 }
+
 .submit-btn{
     width: 100%;
     height: 60px;
-    background-color: #539eee;
+    background-color: #b49abe;
     border-radius: 999px;
     cursor: pointer;
     transition: background-color 1s ease-out,transform 1s ease-out;
 }
+
 .input-submit label{
     position: absolute;
     top: 45%;
@@ -100,10 +135,12 @@ a:hover{
     -ms-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 }
+
 .submit-btn:hover{
-    background-color: #553bda;
+    background-color: #a290fa;
     transform: scale(1.05,1.05);
 }
+
 .sign-up-link{
     text-align: center;
     font-size: 15px;
@@ -111,3 +148,13 @@ a:hover{
     font-weight: 100;
 }
 
+/* ===== SPLINE BACKGROUND ===== */
+.spline-bg{
+    position: fixed;
+    top: -10%;
+    right: -40%;
+    width: 130vw;
+    height: 130vh;
+    z-index: -2;
+    pointer-events: none;
+}

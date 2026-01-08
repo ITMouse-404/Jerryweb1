@@ -6,38 +6,38 @@
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <div class="login-box">
-        <div class="login-header">
+        <div data-aos="fade-down" data-aos-duration="3000"  class="login-header">
             <header>Login</header>
-            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXI4cWV3aHk2NmNlZGE0ejF0cDkzMWh1eTVqN2h6bDl4MGowamY1eCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/W0eEHBAwoCZhu/200.webp" alt="cay dua">
         </div>
         <form id="loginForm">
-            <div class="input-box">
+            <div data-aos="fade-down" data-aos-duration="2500"  class="input-box">
                 <input type="text" id="emailInput" class="input-field" 
                 placeholder="Email" autocomplete="off" required>
             </div>
-            <div class="input-box">
+            <div data-aos="fade-down" data-aos-duration="2500"  class="input-box">
                 <input type="password" id="passwordInput" class="input-field" 
                 placeholder="Password" autocomplete="off" required>
             </div>
-            <div class="forgot">
+            <div data-aos="fade-down" data-aos-duration="3000" class="forgot">
                 <section>
                     <input type="checkbox" id="check">
-                    <label for="check" style="color: rgb(0, 0, 0);">Remember me</label>
+                    <label for="check" style="color: white;">Remember me</label>
                 </section>
                 <section>
                     <a href="#">Forgot Password</a>
                 </section>
             </div>
 
-            <div class="input-submit">
+            <div data-aos="fade-down" data-aos-duration="3500" class="input-submit">
                 <button type="submit" class="submit-btn" id="submit"></button>
                 <label for="submit">Sign In</label>
             </div>
         </form>
-        <div class="sign-up-link">
+        <div data-aos="fade-down" data-aos-duration="4000"  class="sign-up-link">
             <p style="color: aliceblue;">You don't have account ? <a href="register.html">Sign up</a></p>
         </div>
         <div id="message" style="margin-top: 15px; text-align: center; color: #ff4444;"></div>
@@ -71,6 +71,12 @@
                 messageDiv.textContent = 'Email hoặc mật khẩu không đúng!';
             }
         });
+    </script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.29/build/spline-viewer.js"></script>
+    <spline-viewer class="spline-bg" url="https://prod.spline.design/Ry0TIo7UxjLX0nLK/scene.splinecode"></spline-viewer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
+      AOS.init();
     </script>
 </body>
 </html>

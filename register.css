@@ -1,104 +1,149 @@
-*{
-    font-family:  sans-serif;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-size: 100% 100%;
-    animation: registercl 10s ease infinite;
-    background-image: url(https://mir-s3-cdn-cf.behance.net/projects/404/524cc6218819107.Y3JvcCwxMzc5LDEwNzksMzg1LDA.png);
+body {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 6vw;
+  align-items: center;
+  min-height: 100vh;
+  background-size: 100% 100%;
+  animation: registercl 10s ease infinite;
 }
-@keyframes registercl{
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+@keyframes registercl {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-.register-box{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 450px;
-    height: 670px;
-    padding: 30px;
-    border: 3px solid #333;
-    border-radius: 36px;
+.register-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 450px;
+  height: 670px;
+  padding: 30px;
+  border: 4px solid transparent;
+  border-radius: 36px;
+  z-index: 2;
+  background: linear-gradient(#000, #000) padding-box,
+    linear-gradient(
+        90deg,
+        #ff6b35,
+        #ff8c42,
+        #ffa94d,
+        #ffc857,
+        #ffffff,
+        #ffc857,
+        #ffa94d,
+        #ff8c42,
+        #ff6b35
+      )
+      border-box;
+  background-size: 100% 100%, 400% 400%;
+  animation: rainbowBorder 4s linear infinite;
 }
-.register-header{
-    text-align: center;
-    padding: 20px 0px 40px 0px;
+@keyframes rainbowBorder {
+  0% {
+    background-position: 0% 0%, 0% 50%;
+  }
+  50% {
+    background-position: 0% 0%, 100% 50%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 50%;
+  }
 }
-.register-header header{
-    font-size: 65px;
-    font-weight: 600;
-    background: linear-gradient(120deg,#db0603,#d87b08);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: mauchu 5s ease infinite;
+.register-header {
+  text-align: center;
+  padding: 20px 0px 40px 0px;
 }
-@keyframes mauchu{
-    0%{
-        background-position: 0% 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0% 50%;
-    }
+.register-header header {
+  font-size: 65px;
+  font-weight: 600;
+  background: linear-gradient(120deg, #db0603, #d87b08);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: mauchu 5s ease infinite;
 }
-.input-box .input-field{
-    width: 100%;
-    height: 60px;
-    font-size: 17px;
-    padding: 0px 25px;
-    border: none;
-    border-radius: 999px;
-    margin-bottom: 15px;
-    transition: all 0.3s linear;
+@keyframes mauchu {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-.input-field:focus{
-    width: 105%;
-    border: 4px solid #d87b08;
+.input-box .input-field {
+  width: 100%;
+  height: 60px;
+  font-size: 17px;
+  padding: 0px 25px;
+  border: none;
+  border-radius: 999px;
+  margin-bottom: 15px;
+  transition: all 0.3s linear;
 }
-a{
-    text-decoration: none;
-    color: #f09998;
+.input-field:focus {
+  width: 105%;
+  border: 4px solid #d87b08;
 }
-a:hover{
-    color: rgb(18, 154, 233);
+a {
+  text-decoration: none;
+  color: #f09998;
 }
-.input-submit{
-    position: relative;
+a:hover {
+  color: rgb(18, 154, 233);
 }
-.submit-btn{
-    width: 100%;
-    height: 60px;
-    background-color: #69d55d;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: all 0.3 linear;
+.input-submit {
+  position: relative;
 }
-.input-submit label{
-        position: absolute;
-    top: 45%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+.submit-btn {
+  width: 100%;
+  height: 60px;
+  background-color: #e87f67;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3 linear;
 }
-.submit-btn:hover{
-    transform: scale(1.05,1.05);
-    color: #25ded8;
+.input-submit label {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-.sign-up-link{
-    text-align: center;
-    font-size: 15px;
-    margin-top: 20px;
-    font-weight: 100;
+.submit-btn:hover {
+  transform: scale(1.05, 1.05);
+  color: #25ded8;
+}
+.sign-up-link {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 20px;
+  font-weight: 100;
+}
+/* ===== SPLINE BACKGROUND ===== */
+.spline-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 130vh;
+  z-index: -2;
+  pointer-events: none;
+  top: -10%;
+  right: -70%;
 }
