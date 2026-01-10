@@ -4,15 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="https://cdn.vectorstock.com/i/1000v/31/27/hamster-logo-template-isolated-brand-identity-vector-50153127.jpg">
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-<…hash…>"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css">
     <title>Jerry</title>
   </head>
   <body>
@@ -33,7 +30,7 @@
           <a data-aos="fade-down" data-aos-duration="2000" href="#"><i class="fa-solid fa-house"></i> HOME</a>
           <a data-aos="fade-down" data-aos-duration="1500" href="https://discord.gg/SHPzMbAQ"><i class="fa-brands fa-discord"></i> DISCORD</a>
           <a data-aos="fade-down" data-aos-duration="2500" href="mailto:itjerry309@gmail.com"><i class="fa-solid fa-envelope"></i> EMAIL</a>
-          <a data-aos="fade-down" data-aos-duration="3000" href="https://github.com/ITMouse-404"><i class="fa-brands fa-github"></i>   GITHUB</a>
+          <a data-aos="fade-down" data-aos-duration="3000" href="https://github.com/ITMouse-404"><i class="fa-brands fa-github"></i> GITHUB</a>
         </nav>
 
         <div class="btn-group">
@@ -43,7 +40,7 @@
               data-aos-duration="1500"
               class="btn-signing"
             >
-              LOGIN
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> LOGIN
             </button>
          </a>
           <a href="register.html" id="registerLink">
@@ -52,7 +49,7 @@
               data-aos-duration="1500"
               class="btn-signing"
             >
-              REGISTER
+              <i class="fa-solid fa-user-plus"></i> REGISTER
             </button>
           </a>
         </div>
@@ -68,7 +65,7 @@
             data-aos-duration="1500"
             class="tag-box"
           >
-            <div class="tag">INTRUCING &wedbar;</div>
+            <div class="tag">INTRODUCING ⚡</div>
           </div>
 
           <h1
@@ -124,8 +121,7 @@
     <script>
       AOS.init();
     </script>
-      <script>
-   // Kiểm Tra trạng thái login
+    <script>
 function checkLoginStatus(){
   const currentUser = localStorage.getItem('currentUser');
   const loginLink = document.getElementById('loginLink');
@@ -134,7 +130,6 @@ function checkLoginStatus(){
   if(currentUser){
     const userData = JSON.parse(currentUser);
     
-    // Tạo dropdown menu
     const dropdownHtml = `
       <div class="user-dropdown" id="userDropdown">
         <a href="#" id="welcomeBtn">
@@ -150,26 +145,23 @@ function checkLoginStatus(){
     loginLink.outerHTML = dropdownHtml;
     registerLink.style.display = 'none';
     
-    // Xử lý sự kiện sau khi đã thêm vào DOM
     setTimeout(() => {
       const userDropdown = document.getElementById('userDropdown');
       const welcomeBtn = document.getElementById('welcomeBtn');
       const logoutLink = document.getElementById('logoutLink');
       const changePasswordLink = document.getElementById('changePasswordLink');
       
-      // Toggle dropdown khi click vào welcome
       welcomeBtn.addEventListener('click', (e) => {
         e.preventDefault();
         userDropdown.classList.toggle('active');
       });
       
-      // Đóng dropdown khi click ra ngoài
       document.addEventListener('click', (e) => {
         if (!userDropdown.contains(e.target)) {
           userDropdown.classList.remove('active');
         }
       });
-      // Xử lý đổi mật khẩu
+      
       changePasswordLink.addEventListener('click', (e) => {
         e.preventDefault();
         const newPassword = prompt('Nhập mật khẩu mới (tối thiểu 6 ký tự):');
@@ -187,23 +179,19 @@ function checkLoginStatus(){
         userDropdown.classList.remove('active');
       });
       
-      // Xử lý đăng xuất
       logoutLink.addEventListener('click', (e) => {
         e.preventDefault();
-        if(confirm('Bạn muốn đăng xuất ?')){
+        if(confirm('Bạn muốn đăng xuất?')){
           localStorage.removeItem('currentUser');
           location.reload();
         }
       });
     }, 0);
     
-  } else {
-    loginLink.innerHTML = `<i class="fa-solid fa-arrow-right-to-bracket"></i> Login`;
-    loginLink.href = "login.html";
-    registerLink.style.display = 'inline-block';
   }
 }
+
 checkLoginStatus();
-  </script>
+    </script>
   </body>
 </html>

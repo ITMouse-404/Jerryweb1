@@ -27,7 +27,6 @@ body{
     rotate: -30deg;
     z-index: -1;
 }
-/* conteiner */
 .container{
     width: 100%;
     marker: 0 auto;
@@ -35,7 +34,6 @@ body{
     position: relative;
     overflow: hidden;
 }
-/* header */
 header{
     display: flex;
     justify-content: space-between;
@@ -55,7 +53,7 @@ nav{
     gap: 3rem;
     margin-left: -5%;
 }
- nav a{
+nav a{
     font-size: 1rem;
     letter-spacing: 0.1rem;
     text-decoration: none;
@@ -72,7 +70,13 @@ nav a:hover{
 .btn-group{
     display: flex;
     gap: 0.5rem;
+    align-items: center;
 }
+
+.btn-group a {
+    text-decoration: none;
+}
+
 .btn-signing{
     background-color: #a7a7a7;
     color: black;
@@ -81,13 +85,17 @@ nav a:hover{
     border: none;
     font-size: 1rem;
     font-weight: 500;
-    transition: background-color 0.2s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 .btn-signing:hover{
     background-color: white;
+    transform: translateY(-2px);
 }
-/* main content */
+
 main{
     display: flex;
     flex-direction: column;
@@ -99,7 +107,6 @@ main{
     max-width: 40rem;
     margin-left: 10%;
     z-index: 999;
-
 }
  
 .tag-box{
@@ -184,78 +191,7 @@ main{
     top: 0;
     right: -20%;
 }
-/* table respnsive */
-@media(max-width: 1300px){
-    header{
-        padding: 1rem 0.5rem;
-    }
-    .content{
-        margin-top: 85%;
-    }
-    .robot-3d{
-        scale: 0.8;
-        top: -20%;
-        right: 2%;
-    }
-}
-/* mobile */
-@media(max-width:768px){
-    header{
-        padding: 1rem 0.1rem;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    nav{
-        /* display: none; */
-          width: 100%;
-        order: 3;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-left: 0;
-    }
-    /* thêm mới có gì đổi lại */
-    nav a{
-        font-size: 0.8rem;
-    }
-    header h1{
-        font-size: 2rem;
 
-    }
-    .btn-signing{
-        padding: 0.6rem 1.5rem;
-    }
-    .content{
-        margin-top: 25rem;
-    }
-    .robot-3d{
-        scale: 0.5;
-        top: -25%;
-        right: 0;
-    }
-    .content{
-        max-width: 30rem;
-        margin-left: 10%;
-    }
-    .tag-box{
-        width: 12rem;
-    }
-    .content h1{
-        font-size: 2.5rem;
-    }
-    .description{
-        font-size: 1rem;
-    }
-    .btn-get-started{
-        font-size: 0.8rem;
-        padding: 0.8rem 1.2rem;
-
-    }
-    .btn-signing-main{
-        font-size: 0.8rem;
-        padding: 0.5rem 2rem;
-    }
-}
-/* logo */
 .logo {
   display: flex;
   align-items: center;
@@ -268,7 +204,8 @@ main{
   border-radius: 50%;
   margin-right: 8px;
 }
-/* User Dropdown Styling */
+
+/* User Dropdown */
 .user-dropdown {
   position: relative;
   display: inline-block;
@@ -297,11 +234,6 @@ main{
   transform: translateY(-2px);
 }
 
-.user-dropdown > a i {
-  font-size: 1.1rem;
-}
-
-/* Dropdown Content */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -310,33 +242,18 @@ main{
   background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
   min-width: 220px;
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
-              0 0 20px rgba(127, 66, 167, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   opacity: 0;
   transform: translateY(-10px);
   transition: all 0.3s ease;
   border: 1px solid rgba(127, 66, 167, 0.3);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
 }
 
 .user-dropdown.active .dropdown-content {
   display: block;
   opacity: 1;
   transform: translateY(0);
-  animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .dropdown-content a {
@@ -348,8 +265,6 @@ main{
   gap: 0.8rem;
   transition: all 0.3s ease;
   border-bottom: 1px solid rgba(127, 66, 167, 0.2);
-  font-size: 0.95rem;
-  white-space: nowrap;
 }
 
 .dropdown-content a:last-child {
@@ -360,48 +275,53 @@ main{
   background: linear-gradient(90deg, rgba(127, 66, 167, 0.2), transparent);
   color: white;
   padding-left: 2rem;
-  text-shadow: 0 0 10px rgba(127, 66, 167, 0.5);
 }
 
-.dropdown-content a i {
-  font-size: 1.1rem;
-  width: 20px;
-  text-align: center;
-  color: #7f42a7;
-  transition: all 0.3s ease;
+@media(max-width: 1300px){
+    header{
+        padding: 1rem 0.5rem;
+    }
+    .content{
+        margin-top: 85%;
+    }
+    .robot-3d{
+        scale: 0.8;
+        top: -20%;
+        right: 2%;
+    }
 }
 
-.dropdown-content a:hover i {
-  color: #a060d8;
-  transform: scale(1.2);
-}
-
-/* Arrow indicator */
-.user-dropdown > a::after {
-  content: '▼';
-  font-size: 0.7rem;
-  margin-left: 0.3rem;
-  transition: transform 0.3s ease;
-}
-
-.user-dropdown.active > a::after {
-  transform: rotate(180deg);
-}
-
-/* Mobile Responsive */
-@media(max-width: 768px) {
-  .user-dropdown > a {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
-  }
-  
-  .dropdown-content {
-    min-width: 200px;
-    right: -10px;
-  }
-  
-  .dropdown-content a {
-    padding: 0.8rem 1.2rem;
-    font-size: 0.85rem;
-  }
+@media(max-width:768px){
+    header{
+        padding: 1rem 0.1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    nav{
+        width: 100%;
+        order: 3;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-left: 0;
+    }
+    nav a{
+        font-size: 0.8rem;
+    }
+    header h1{
+        font-size: 2rem;
+    }
+        .btn-signing{
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    .content{
+        margin-top: 25rem;
+        max-width: 30rem;
+        margin-left: 10%;
+    }
+    .robot-3d{
+        scale: 0.5;
+        top: -25%;
+        right: 0;
+    }
 }
